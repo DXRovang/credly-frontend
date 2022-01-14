@@ -1,17 +1,16 @@
 const Hero = ({dogs}) => {
   return ( 
     <div>
-      In Hero.js
       {dogs.map((dog)=>(
         <div className="dog">
-        {dog.name}
-        {dog.temperament}
-        {dog.life_span}
-        {dog.origin}
-        {dog.bred_for}
-        {dog.breed_group}
-        {dog.image_url}
-        <button>Badge</button>
+        <div>Name: {dog.name}</div>
+        <div>Temperament: {dog.temperament}</div>
+        <div>Lifespan: {dog.life_span}</div>
+        <div>Origin: {dog.origin}</div>
+        <div>Bred for: {dog.bred_for}</div>
+        <div>Breed group: {dog.breed_group}</div>
+        <img className="imgSize" src={dog.image_url}/>
+        <div><button>Badge</button></div>
         </div>
       ))}
     </div>

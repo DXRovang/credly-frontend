@@ -5,7 +5,7 @@ import HeroList from './HeroList';
 function App() {
   return (
     <div>
-      In App.js
+      
       <Navbar/>
       <HeroList/>
    

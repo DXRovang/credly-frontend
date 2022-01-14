@@ -14,7 +14,6 @@ const HeroList = () => {
   
   return ( 
     <div>
-      In HeroList.js
   {dogs && <Hero dogs={dogs}/> }
     </div>
    );

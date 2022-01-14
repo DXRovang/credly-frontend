@@ -1,7 +1,7 @@
 const Navbar = () => {
   return ( 
-    <div>
-      In Navbar.js
+    <div className="nav">
+      <h1>The Hero You Need</h1>
     </div>
    );
 }
