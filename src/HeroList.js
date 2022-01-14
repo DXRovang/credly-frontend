@@ -6,7 +6,6 @@ const HeroList = () => {
     fetch("http://127.0.0.1:3000/heros")
     .then((r) => r.json())
     .then((data) =>{
-      console.log(data)
       setDogs(data)
     })
   }, [])

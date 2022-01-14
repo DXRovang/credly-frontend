@@ -1,4 +1,9 @@
 const Hero = ({dogs}) => {
+
+const addBadge = () =>{
+  console.log("added!")
+}
+
   return ( 
     <div>
       {dogs.map((dog)=>(
@@ -9,8 +14,8 @@ const Hero = ({dogs}) => {
         <div>Origin: {dog.origin}</div>
         <div>Bred for: {dog.bred_for}</div>
         <div>Breed group: {dog.breed_group}</div>
-        <img className="imgSize" src={dog.image_url}/>
-        <div><button>Badge</button></div>
+        <img className="imgSize" src={dog.image_url} alt="dog"/>
+        <div><button onClick={addBadge}>Badge</button></div>
         </div>
       ))}
     </div>
