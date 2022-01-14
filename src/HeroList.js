@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react'
 const HeroList = () => {
   const [dogs, setDogs] = useState([])
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/heros")
+    fetch('https://credly-backend.herokuapp.com/heros')
     .then((r) => r.json())
     .then((data) =>{
       setDogs(data)
     })
+    .catch((err) => console.log(err))
   }, [])
   
   
