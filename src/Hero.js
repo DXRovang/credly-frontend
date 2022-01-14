@@ -1,7 +1,22 @@
 const Hero = ({dogs}) => {
 
-const addBadge = () =>{
+const addBadge = (e) =>{
+  e.preventDefault();
   console.log("added!")
+  fetch('https://sandbox-api.youracclaim.com/organizations/65a43bec-523b-46f7-ac8d-d9b4866784a3/badges', {
+    method: 'POST',
+    headers: {
+      "Accept": "application/json",
+      "Authorization": "Basic RWBe7l3ns9qtBffId1jHs_nsp8DHxHx8uV--",
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      "badge_template_id": "3f148d26-5610-4c1b-a624-40bad8dd68e9",
+      "issued_to_first_name": "Bella",
+      "issued_to_last_name": "the Doberman",
+    })})
+    .then(r=>r.json())
+    .then(data=>console.log(data))
 }
 
   return ( 
