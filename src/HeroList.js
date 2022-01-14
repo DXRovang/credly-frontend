@@ -8,9 +8,8 @@ const HeroList = () => {
     .then((data) =>{
       console.log(data)
       setDogs(data)
-    }
-    )
-  })
+    })
+  }, [])
   
   
   return ( 
