@@ -7,6 +7,7 @@ const HeroList = () => {
     .then((r) => r.json())
     .then((data) =>{
       console.log(data)
+      setDogs(data)
     }
     )
   })
@@ -15,7 +16,7 @@ const HeroList = () => {
   return ( 
     <div>
       In HeroList.js
-      <Hero/>
+  {dogs && <Hero dogs={dogs}/> }
     </div>
    );
 }
