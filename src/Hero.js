@@ -1,24 +1,31 @@
+import { useState } from 'react'
+
 const Hero = ({dogs}) => {
+
+const [color, setColor] = useState(false)
 
 const addBadge = (dog_id) =>{
   fetch(`https://credly-backend.herokuapp.com/heros/${dog_id}`)
   .then(r=>r.json())
   .then(data=>console.log(data))
-
+}
+const changeColor = () => {
+  setColor(!color)
 }
 
   return ( 
     <div>
       {dogs.map((dog)=>(
-        <div className="dog">
-        <div>Name: {dog.name}</div>
-        <div>Temperament: {dog.temperament}</div>
-        <div>Lifespan: {dog.life_span}</div>
-        <div>Origin: {dog.origin}</div>
-        <div>Bred for: {dog.bred_for}</div>
-        <div>Breed group: {dog.breed_group}</div>
-        <img className="imgSize" src={dog.image_url} alt="dog"/>
-        <div><button onClick={()=> addBadge(dog.id) }>Badge</button></div>
+        <div className={color ? "dog": "cat"}>
+          <div>Name: {dog.name}</div>
+          <div>Temperament: {dog.temperament}</div>
+          <div>Lifespan: {dog.life_span}</div>
+          <div>Origin: {dog.origin}</div>
+          <div>Bred for: {dog.bred_for}</div>
+          <div>Breed group: {dog.breed_group}</div>
+          <img className="imgSize" src={dog.image_url} alt="dog"/>
+          <div><button onClick={()=> addBadge(dog.id) }>Badge</button></div>
+          <div><button onClick={()=> changeColor(dog.id) }>Color</button></div>
         </div>
       ))}
     </div>
